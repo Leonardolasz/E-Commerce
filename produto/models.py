@@ -17,7 +17,7 @@ class Produto(models.Model):
     slug = models.SlugField(unique=True, blank=True, null=True)
     preco_marketing = models.FloatField(verbose_name='Preço')
     preco_marketing_promocional = models.FloatField(
-        default=0, verbose_name='Preço Promo')
+        default=0, verbose_name='Preço Promo.')
     tipo = models.CharField(
         default='V',
         max_length=1,
@@ -35,7 +35,7 @@ class Produto(models.Model):
     def get_preco_promocional_formatado(self):
         return utils.formata_preco(self.preco_marketing_promocional)
 
-    get_preco_promocional_formatado.short_description = 'Preço promo'
+    get_preco_promocional_formatado.short_description = 'Preço Promo.'
 
     @staticmethod
     def resize_image(img, new_width=800):
